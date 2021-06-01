@@ -1,0 +1,266 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #505661;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.Article-list {
+    color: darkslategray;
+    width: 40%;
+    border: 2px solid lightgrey;
+    margin: 50px auto;
+    border-radius: 5px;
+}
+
+.Article-list-header {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.Article-list-header p {
+    display: inline;
+    padding-left: 15px;
+}
+
+.Article-list-header-left {
+    width: 60%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Article-list-header-right {
+    width: 40%;
+    font-size: 18px;
+}
+
+.Article-list-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 30px;
+}
+
+.Article-list-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid lightgrey;
+}
+
+.Article-list-item-left {
+    width: 60%;
+    padding-left: 15px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.Article-list-item-right {
+    width: 40%;
+    padding-left: 15px;
+}
+
+.Article-list-item-right i {
+    padding-right: 5px;
+}
+
+.Arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.Arrow-up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    cursor: pointer;
+}
+
+.Arrow-down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.Create-article {
+    display: flex;
+    justify-content: center;
+}
+
+.Create-article-button {
+    margin-left: 33%;
+    border-radius: 9px;
+    padding: 9px;
+    cursor: pointer;
+    background-color: #e8e8e8;
+    transition-duration: 0.4s;
+}
+
+.Create-article-button:hover {
+    background-color: #5a76da;
+    color: white;
+}
+
+.Article-wrapper {
+    margin-top: 50px;
+}
+
+.Article-header {
+    width: 40%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    color: darkslategray;
+}
+
+.Article-header p {
+    display: inline-block;
+}
+
+.Article-header-title {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid darkslategray;
+}
+
+.Article-header-title p:last-child {
+    padding-left: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.Article-header-title-editable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Article-header-title-editable input{
+    width: 80%;
+    border: none;
+    padding-left: 5px;
+    font-size: 15px;
+    color: darkslategray;
+    outline: none;
+    border-bottom: 1px solid lightgrey;
+}
+
+.Article-header-created {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid darkslategray;
+}
+
+.Article-header-created i {
+    padding-left: 10px;
+}
+
+.Article-header-updated {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Article-header-updated i {
+    padding-left: 10px;
+}
+
+.Article-content {
+    width: 40%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    color: darkslategray;
+}
+
+.Article-content p:last-child {
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.Article-active-buttons {
+    width: 40%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: flex-end;
+    color: darkslategray;
+}
+
+.Article-active-buttons button {
+    margin: 0 15px;
+    border-radius: 9px;
+    padding: 8px;
+    cursor: pointer;
+    background-color: #e8e8e8;
+    transition-duration: 0.4s;
+}
+
+.Article-active-buttons-edit:hover {
+    background-color: #33c582;
+    color: white;
+}
+
+.Article-active-buttons-delete:hover {
+    background-color: #943176;
+    color: white;
+}
+
+.Article-active-buttons-return:hover {
+    background-color: #5a76da;
+    color: white;
+}
+
+.Edit-article-textarea {
+    height: 300px;
+    resize: none;
+    text-align: justify;
+    text-indent: 20px;
+    color: darkslategray;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    outline: none;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

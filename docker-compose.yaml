@@ -1,0 +1,41 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13.2
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: nasctech
+      POSTGRES_PASSWORD: postgres
+
+  server:
+    build:
+      context: ./back/
+      dockerfile: ./Dockerfile
+    command:
+      - /bin/bash
+      - -c
+      - |
+        knex migrate:latest --esm --knexfile ./knexfile.mjs
+        knex seed:run --esm --knexfile ./knexfile.mjs
+        npm run start
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: nasctech
+      POSTGRES_PASSWORD: postgres
+      DB_HOST: postgres
+
+  web:
+    build:
+      context: ./front/
+      dockerfile: ./Dockerfile
+    command: npm run start
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
